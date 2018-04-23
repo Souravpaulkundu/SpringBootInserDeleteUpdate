@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
- 
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.FileModel;
 import com.example.demo.service.FileService;
@@ -27,10 +27,9 @@ public class FileController {
 	
 	@GetMapping(value="/"  )
 	public String addFile(Model model) throws ParseException {
-		FileModel fileModel = new FileModel("hello" );
-		model.addAttribute("fileModel", fileModel);
-		return "hello";
+	return "hello";
 	}
+	
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST, params="action=store")
 	public String addFile(@ModelAttribute FileModel fileModel){
